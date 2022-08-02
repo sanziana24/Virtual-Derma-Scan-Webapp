@@ -1,0 +1,91 @@
+<app-header></app-header>
+<div class="view-case-page">
+    <div class="table-general-style">
+        <div>
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Search">
+            </mat-form-field>
+        </div>
+        <br>
+        <mat-table class="mat-elevation-z8 table-responsive-md " [dataSource]="dataSource" matSort>
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Case ID</mat-header-cell>
+                <mat-cell *matCellDef="let case"> {{case.idCase}} </mat-cell>
+            </ng-container>
+
+            <!-- Date Submit Column -->
+            <ng-container matColumnDef="dateSubmit">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Date Submit</mat-header-cell>
+                <mat-cell *matCellDef="let case">  {{case.dateSubmit | date: 'mediumDate'}} {{case.dateSubmit | date: 'shortTime'}}</mat-cell>
+            </ng-container>
+
+            <!-- Status Column -->
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Status</mat-header-cell>
+                <mat-cell *matCellDef="let case"> {{case.status}} </mat-cell>
+            </ng-container>
+
+            <!-- View Result Column -->
+            <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Result</mat-header-cell>
+                <mat-cell *matCellDef="let case">
+                    <button mat-raised-button *ngIf="case.answear"
+                            class="btn-submit" (click)="viewResult(case)">View Result
+                    </button>
+
+                    <label *ngIf="!case.answear" class="result-label">Case not evaluated</label>
+
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row matRipple *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+</div>
+<app-footer></app-footer>
+
+
+<!--template pdf -->
+<div [hidden]="true" class="container mt-5 mb-3" id="pdfCaseTemplate" #pdfCaseTemplate>
+    <table>
+        <tbody>
+        <tr>
+            <td style="border: 0px;"><img [src]="logoPicture" width="72" height="72"></td>
+            <td style="border: 0px;"><h2 style="color: lightpink;font-size: 44px;font-style:italic;margin-top: 10px" >Virtual Derma Scan</h2></td>
+        </tr>
+        </tbody>
+    </table>
+    <br><br><br><br>
+    <h1 style="text-align: center">Dermatological Case Evaluation</h1>
+    <br><br><br>
+    <h5 style="color: lightpink;margin-left: 7px">Case details </h5>
+
+    <table>
+        <tbody>
+        <tr>
+            <td style="border: 0px;"><img [src]="caseSel.stringCasePicture" width="210" height="210"></td>
+            <td style="border: 0px; margin-left: 110px">
+                <h6 style="color: #c83349"> Case ID:  <span style="color: black">{{caseSel.idCase}}</span></h6>
+                <h6 style="color: #c83349">Description: <span style="color: black">{{caseSel.description}}</span></h6>
+                <h6 style="color: #c83349">Condition time:  <span style="color: black">{{caseSel.conditionTime}}</span></h6>
+                <h6 style="color: #c83349">Gendre:  <span style="color: black">{{caseSel.gendre}}</span></h6>
+                <h6 style="color: #c83349">Country:  <span style="color: black">{{caseSel.country}}</span></h6>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+    <h5 style="color: lightpink;margin-left: 7px">Dermatologist Evaluation </h5>
+    <h6 style="line-height: 1.2px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{caseSel.answear}}</h6>
+
+    <br><br><br><br>
+    <h5 style="text-align: center;margin-top: 30px">Case evaluated by <span style="font-style: italic">Dr. {{doctor.firstName}} {{doctor.lastName}}</span><span style="font-size: 20px; font-weight: normal;font-style: italic"> ({{doctor.email}})</span></h5>
+
+
+</div>
+

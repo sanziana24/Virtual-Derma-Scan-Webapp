@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="upload-image-page">
+    <mat-card class="card">
+        <mat-card-content>
+            <div class="container text-center">
+                <span class="span-upload">Try the virtual derma scanner</span>
+                <br><br><br>
+                <div class="panel file-drop-area" ngx-dropzone [multiple]="false" [accept]="'image/*'"
+                     (change)="onSelect($event)">
+                    <ngx-dropzone-label>
+                        <div>
+                            <mat-icon class="label-icon">upload</mat-icon>
+                            <span class="label">{{noFileLabel}}</span>
+                            <br><br>
+                            <div class="hover-text">{{ hoverText}}</div>
+                        </div>
+                    </ngx-dropzone-label>
+                    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
+                                                [removable]="true" (removed)="onRemove(f)">
+                    </ngx-dropzone-image-preview>
+                </div>
+                <br><br><br>
+                <div class="row">
+                    <div class="col-xl-6">
+                        <button class="button-83" role="button" (click)="onRemoveDropzone()">Clear</button>
+                    </div>
+                    <div class="col-xl-6">
+                        <button class="button-83" [disabled]="!isFileUploaded" (click)="processPicture()">Search<img
+                                src="/assets/images/racket-space.png" height="25" width="25"/></button>
+                    </div>
+                </div>
+                <br><br><br><br>
+                <mat-spinner *ngIf="showSpinner" class="spinner" diameter="85" stroke="#0CC20C"></mat-spinner>
+                <span *ngIf="isFileUploaded" class="label"><a routerLink="/skinGuide">{{resultLabel}}</a></span>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<app-footer></app-footer>

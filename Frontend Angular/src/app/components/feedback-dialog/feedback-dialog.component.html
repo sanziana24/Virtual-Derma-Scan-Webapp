@@ -1,0 +1,27 @@
+<div>
+    <button class="close" mat-dialog-close>X</button>
+    <img class="logo-style" src="/assets/images/feedback-logo-2.png" alt="feedback icon">
+    <br><br><br>
+    <div mat-dialog-title class="text-center">
+        Please rate your overall application experience
+    </div>
+    <br>
+    <div class="text-center">
+        <ngb-rating [max]="5" [(rate)]="ratingValue" [readonly]="false"></ngb-rating>
+        <br><br><br>
+        <textarea placeholder="Write a feedback" [(ngModel)]="feedbackMessage"></textarea>
+        <br><br>
+        <p class="error-message text-center">{{error}}</p>
+        <br>
+        <div class="row">
+            <div class="col" style="margin-top: 13px;">
+                <span (click)="onSkipClick()">Skip for now</span>
+            </div>
+            <div class="col">
+                <button class="button-15" role="button" (click)="onSubmitClick()">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

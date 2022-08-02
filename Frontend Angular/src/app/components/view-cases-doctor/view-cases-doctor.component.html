@@ -1,0 +1,106 @@
+<app-header></app-header>
+<div class="view-cases-doctor-page">
+    <div class="table-general-style">
+        <div>
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Search">
+            </mat-form-field>
+        </div>
+        <br>
+        <mat-table class="mat-elevation-z8 table-responsive-md " [dataSource]="dataSource" matSort>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+                <mat-cell *matCellDef="let case"> {{case.idCase}} </mat-cell>
+            </ng-container>
+
+            <!-- Picture Column -->
+            <ng-container matColumnDef="Picture">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Picture</mat-header-cell>
+                <mat-cell *matCellDef="let case">
+                    <img class="img-class" [src]="case.stringCasePicture">
+                </mat-cell>
+            </ng-container>
+
+            <!-- Description Column -->
+            <ng-container matColumnDef="description">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Description</mat-header-cell>
+                <mat-cell *matCellDef="let case"> {{case.description}} </mat-cell>
+            </ng-container>
+
+            <!-- Condition Time Column -->
+            <ng-container matColumnDef="conditionTime">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Condition Time</mat-header-cell>
+                <mat-cell *matCellDef="let case"> {{case.conditionTime}} </mat-cell>
+            </ng-container>
+
+            <!-- Age Column -->
+            <ng-container matColumnDef="age">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Age</mat-header-cell>
+                <mat-cell *matCellDef="let case"> {{case.age}} </mat-cell>
+            </ng-container>
+
+            <!-- Gendre Column -->
+            <ng-container matColumnDef="gendre">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Gendre</mat-header-cell>
+                <mat-cell *matCellDef="let case"> {{case.gendre}} </mat-cell>
+            </ng-container>
+
+            <!-- Country Column -->
+            <ng-container matColumnDef="country">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Country</mat-header-cell>
+                <mat-cell *matCellDef="let case"> {{case.country}} </mat-cell>
+            </ng-container>
+
+            <!-- Date Submit Column -->
+            <ng-container matColumnDef="dateSubmit">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Date Submit</mat-header-cell>
+                <mat-cell
+                        *matCellDef="let case"> {{case.dateSubmit | date: 'mediumDate'}} {{case.dateSubmit | date: 'shortTime'}}</mat-cell>
+            </ng-container>
+
+            <!-- Status Column -->
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Status</mat-header-cell>
+                <mat-cell *matCellDef="let case">
+                    <span *ngIf="case.answear">{{case.status}}</span>
+                    <span *ngIf="!case.answear" class="not-answered">{{case.status}}
+                        <span *ngIf="case.timeElapsed > 48" style="font-size:30px;"> ! </span>
+                    </span>
+                </mat-cell>
+            </ng-container>
+
+            <!-- Answer Column -->
+            <ng-container matColumnDef="answear">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Answer</mat-header-cell>
+                <mat-cell *matCellDef="let case" [contentEditable]="true" name="answear" ngDefaultControl
+                          [(ngModel)]="answear">
+                    {{case.answear}}
+                    <div *ngIf="!case.answear" class="text-area-div">
+                        <textarea class="textarea-style" placeholder="Provide an answer"></textarea>
+                    </div>
+                </mat-cell>
+            </ng-container>
+
+            <!-- Evaluate Column -->
+            <ng-container matColumnDef="Action">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Evaluate</mat-header-cell>
+                <mat-cell *matCellDef="let case">
+                    <span *ngIf="case.answear" class="already-evaluated">Case already evaluated</span>
+                    <div *ngIf="!case.answear">
+                        <button mat-raised-button
+                                class="btn-submit" (click)="evaluateCase(case)">Evaluate
+                        </button>
+                    </div>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row matRipple *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+</div>
+<app-footer></app-footer>

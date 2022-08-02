@@ -1,0 +1,167 @@
+<app-header></app-header>
+<mat-card class="card-1">
+    <mat-card-content>
+        <br><br>
+        <p class="page-title">
+            Get an online check from a certified dermatologist
+        </p>
+        <br>
+        <div>
+            <p class="p-checking-benefits">✓ Virtual care is a <strong>convenient</strong> and <strong>safe</strong>
+                option</p>
+            <p class="p-checking-benefits">✓ <strong>Mostly</strong> people <strong>don't need</strong> to see a doctor
+                in person</p>
+            <p class="p-checking-benefits">✓ <strong>Response guaranteed</strong> as fast as 48 hours</p>
+            <p class="p-checking-benefits">✓ <strong>No worries</strong> about data protection and security</p>
+            <p class="p-checking-benefits">✓ All is <strong>free</strong> 😀</p>
+        </div>
+    </mat-card-content>
+</mat-card>
+<br>
+<div class="get-checked-page">
+    <br>
+    <mat-card class="card">
+        <mat-card-content>
+            <form name="form" #myForm="ngForm" (ngSubmit)="myForm.form.valid">
+                <div class="container">
+                    <br><br>
+                    <h2 class="section-titles">
+                        <span class="form-first-section">1</span>
+                        <span class="section-title">Upload photo of the affected area</span>
+                    </h2>
+                    <br><br>
+                    <div class="panel file-drop-area" ngx-dropzone [multiple]="false" [accept]="'image/*'"
+                         (change)="onSelect($event)">
+                        <ngx-dropzone-label>
+                            <img src="/assets/images/upload-photo.png"
+                                 style="height: 95px; width: 95px;">
+                        </ngx-dropzone-label>
+                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files"
+                                                    [file]="f"
+                                                    [removable]="true" (removed)="onRemove(f)">
+                        </ngx-dropzone-image-preview>
+                    </div>
+                    <br><br>
+                    <h2 class="section-titles">
+                        <span class="form-first-section">2</span>
+                        <span class="section-title">Describe it</span>
+                    </h2>
+                    <br>
+                    <p style="margin-left:88px; font-weight: bold;font-size:15px;">Include location, color, size and
+                        duration</p>
+                    <div class="form-group">
+                    <textarea class="textarea"
+                              name="description"
+                              [(ngModel)]="description"
+                              placeholder="Include information regarding the body part(s) affected, your symptoms, how the condition has evolved, possible prior treatments, etc. More information usually leads to better responses."
+                              #descriptionField="ngModel" required>
+                    </textarea>
+                        <div *ngIf="!descriptionField.untouched && !descriptionField.valid  && descriptionField.hasError('required')"
+                             class="help-block" style="margin-left:88px;">
+                            Description is <strong style="color: lightpink;font-size: 16px;"> required</strong>
+                        </div>
+                    </div>
+                    <br><br>
+                    <p style="margin-left:88px; font-weight: bold;font-size:15px;">For how long have you had this
+                        condition?</p>
+                    <div class="form-group">
+                        <label for="daysRadio" class="label-radio-duration">
+                            <input type="radio"
+                                   class="radio-duration"
+                                   name="duration"
+                                   value="DAYS"
+                                   id="daysRadio"
+                                   [(ngModel)]="duration"
+                                   #durationField="ngModel" required
+                                   style="margin-left:88px;">
+                            Days
+                        </label>
+                        <label for="weeksRadio" class="label-radio-duration">
+                            <input type="radio"
+                                   class="radio-duration"
+                                   name="duration"
+                                   value="WEEKS"
+                                   id="weeksRadio"
+                                   [(ngModel)]="duration"
+                                   #durationField="ngModel" required>
+                            Weeks
+                        </label>
+                        <label for="monthsRadio" class="label-radio-duration">
+                            <input type="radio"
+                                   class="radio-duration"
+                                   name="duration"
+                                   value="MONTHS"
+                                   id="monthsRadio"
+                                   [(ngModel)]="duration"
+                                   #durationField="ngModel" required>
+                            Months
+                        </label>
+                        <label for="yearsRadio" class="label-radio-duration">
+                            <input type="radio"
+                                   class="radio-duration"
+                                   name="duration"
+                                   value="YEARS"
+                                   id="yearsRadio"
+                                   [(ngModel)]="duration"
+                                   #durationField="ngModel" required>
+                            Years
+                        </label>
+                    </div>
+
+                    <br><br>
+                    <h2 class="section-titles">
+                        <span class="form-first-section">3</span>
+                        <span class="section-title">User profile details</span>
+                    </h2>
+                    <br>
+                    <div>
+                        <label for="gendre" class="label-inputs-section-3"> Gendre <br>
+                            <input type="text"
+                                   name="gendre"
+                                   [(ngModel)]="gendre"
+                                   id="gendre"
+                                   size="40"
+                                   readonly>
+                        </label>
+                        <br>
+                        <label for="country" class="label-inputs-section-3"> Country <br>
+                            <input type="text"
+                                   name="country"
+                                   [(ngModel)]="country"
+                                   value="valoarea autocompletata"
+                                   id="country"
+                                   size="40"
+                                   readonly>
+                        </label>
+                        <br>
+                        <label for="age" class="label-inputs-section-3"> Age <br>
+                            <input type="text"
+                                   name="age"
+                                   [(ngModel)]="age"
+                                   id="age"
+                                   size="40"
+                                   readonly>
+                        </label>
+                        <br>
+                        <label for="email" class="label-inputs-section-3"> Email <br>
+                            <input type="text"
+                                   name="email"
+                                   [(ngModel)]="email"
+                                   id="email"
+                                   size="40"
+                                   readonly>
+                        </label>
+                    </div>
+<!--                    <p class="edit-profile">Not up to date? <a routerLink="/editUserProfile">Edit</a> your profile now! </p>-->
+                    <br><br>
+                    <div class="wrapper">
+                        <button class="button-73"
+                                role="button"
+                                (click)="onSubmit()">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+<app-footer></app-footer>

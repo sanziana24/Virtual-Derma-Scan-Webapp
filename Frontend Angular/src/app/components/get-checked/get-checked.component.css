@@ -1,0 +1,164 @@
+.get-checked-page{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-1{
+    background-color: lightpink;
+    width:100vw;
+    height:50vh;
+}
+
+.page-title{
+    font-family: 'Kalam', cursive;
+    color: black;
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.p-checking-benefits{
+    color: white;
+    text-align: left;
+    font-size: 18px;
+    padding-left: 180px;
+}
+
+.card {
+    /*background-color: #F25278;*/
+    background-color: white;
+    padding: 5%;
+    width: 50vw;
+    height: 134vh;
+    margin-top: -145px;
+    margin-bottom: 30px;
+    box-shadow: 12px 12px 12px gray;
+}
+
+.form-content{
+    margin-left: 30px;
+}
+
+.form-first-section{
+    background-color: lightpink;
+    display: block;
+    width: 45px;
+    line-height: 45px;
+    color: white;
+    position: absolute;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.section-titles{
+    color: lightpink;
+    position: relative;
+    margin:auto;
+    padding-left:30px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.section-title{
+    margin-left:60px;
+    margin-top: 40px !important;
+    padding-top: 40px;
+}
+
+.file-drop-area {
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    width: 25%;
+    border: 3px dotted;
+    border-color: #F25278;
+    height: 120px;
+    margin-left: 88px;
+}
+
+.file-drop-area.disabled {
+    border: 2px dotted;
+}
+
+.textarea{
+    margin-left:88px;
+    height: 125px;
+    width:460px;
+}
+
+.radio-duration{
+    margin-left: 20px;
+
+}
+
+.label-radio-duration{
+    font-size: 17px;
+}
+
+.label-inputs-section-3{
+    margin-left:88px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.button-73 {
+    appearance: none;
+    background-color: white;
+    border-radius: 40em;
+    border-style: none;
+    box-shadow: lightpink 0 -12px 6px inset;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    margin: 0;
+    outline: none;
+    padding: 1rem 1.3rem;
+    quotes: auto;
+    text-align: center;
+    text-decoration: none;
+    transition: all .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-73:hover {
+    background-color: #e06377;
+    /*box-shadow: #FF6314 0 -6px 8px inset;*/
+    transform: scale(1.125);
+}
+
+.button-73:active {
+    transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+    .button-73 {
+        font-size: 1.5rem;
+        padding: .75rem 2rem;
+    }
+}
+
+.wrapper{
+    text-align: center;
+}
+
+.edit-profile{
+    margin-left: 88px;
+    font-weight: bold;
+}
+
+a{
+    color: lightpink;
+}
+
+

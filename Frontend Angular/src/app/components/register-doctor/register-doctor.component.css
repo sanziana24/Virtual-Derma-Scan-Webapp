@@ -1,0 +1,112 @@
+.register-page {
+    background-image: url('https://i.pinimg.com/736x/d6/7c/43/d67c435679e4cf81a77779f0c2706c75.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-card {
+    background-color: white;
+    width: 40vw;
+    height: 100vh;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 13px;
+    /*border: 2px solid #EA4C89;*/
+}
+
+.header {
+    /*padding-bottom: 5%;*/
+    padding-top: 5%;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 26px;
+    color: #EA4C89;
+}
+
+.subtitle {
+    padding-top: 3%;
+}
+
+.box {
+    /*display: block;*/
+    margin-top: -30px;
+    margin-left: auto;
+    margin-right: 100px;
+    width: 38px;
+}
+
+.input-label {
+    color: lightpink;
+}
+
+strong {
+    color: lightpink;
+    font-size: 16px;
+}
+
+
+/* CSS */
+.button-1 {
+    background-color: #EA4C89;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 40px;
+    width: 120px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-1:hover,
+.button-1:focus {
+    background-color: #F082AC;
+}
+
+.wrapper {
+    margin-top:25px;
+    text-align: center;
+}
+
+.already-account {
+    text-align: center;
+    margin-top: 8px;
+}
+
+a{
+    color: #EA4C89;
+}
+
+.detalii {
+    width: 100%;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    resize: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+

@@ -1,0 +1,106 @@
+<app-header></app-header>
+<div class="activate-account-page">
+    <br><br>
+    <mat-card class="activate-account-card">
+        <mat-card-header class="header">
+            <mat-card-title class="title">
+                Activate account
+            </mat-card-title>
+            <mat-card-subtitle class="subtitle">
+                Please fill in the form below
+            </mat-card-subtitle>
+            <div class="box">
+                <br>
+                <img mat-card-image
+                     src="/assets/images/login-icon.png">
+            </div>
+        </mat-card-header>
+        <hr>
+        <br>
+
+        <mat-card-content>
+            <form name="form" #myForm="ngForm" (ngSubmit)="myForm.form.valid">
+                <div class="form-group">
+                    <label for="username" class="input-label">Username*</label>
+                    <input type="text"
+                           [(ngModel)]="username"
+                           class="form-control"
+                           id="username"
+                           name="username"
+                           placeholder="Username"
+                           #usernameField="ngModel" required>
+                </div>
+                <div *ngIf="!usernameField.untouched && !usernameField.valid  && usernameField.hasError('required')"
+                     class="help-block">
+                    Username is <strong> required</strong>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="input-label">Password*</label>
+                    <input type="password"
+                           class="form-control"
+                           id="password"
+                           name="password"
+                           placeholder="Password"
+                           [(ngModel)]="password"
+                           minlength="8"
+                           pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                           #passwordField="ngModel" required>
+                    <div *ngIf="passwordField.hasError('pattern') && !passwordField.hasError('required')"
+                         class="help-block">
+                        Password must contain <strong>at least 8 characters, 1 uppercase, 1 lowercase, 1 digit
+                        and 1 special character!</strong>
+                    </div>
+                    <div *ngIf="!passwordField.untouched && !passwordField.valid  && passwordField.hasError('required')"
+                         class="help-block">
+                        Password is <strong> required</strong>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="confirmPassword" class="input-label">Confirm Password*</label>
+                    <input type="password"
+                           class="form-control"
+                           id="confirmPassword"
+                           name="confirmPassword"
+                           placeholder="Confirm Password"
+                           [(ngModel)]="confirmPassword"
+                           minlength="8"
+                           pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                           #confirmPasswordField="ngModel"
+                           required>
+                </div>
+                <div *ngIf="confirmPasswordField.hasError('pattern') && !confirmPasswordField.hasError('required')"
+                     class="help-block">
+                    Password must contain <strong>at least 8 characters, 1 uppercase, 1 lowercase, 1 digit and 1
+                    special character!</strong>
+                </div>
+                <div *ngIf="!(confirmPasswordField.value==passwordField.value) && !confirmPasswordField.hasError('pattern') && !confirmPasswordField.hasError('required')"
+                     class="help-block">
+                    Password and Confirm Password <strong> do not match!</strong>
+                </div>
+                <div *ngIf="!confirmPasswordField.untouched && !confirmPasswordField.valid  && confirmPasswordField.hasError('required')"
+                     class="help-block">
+                    Confirm Password is <strong> required</strong>
+                </div>
+
+                <br>
+                <p><strong>*</strong>Required fields</p>
+
+                <div class="form-group">
+                    <div class="wrapper">
+                        <button class="button-1"
+                                role="button"
+                                [disabled]="!myForm.valid"
+                                (click)="onSubmit()">
+                            ACTIVATE
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+
+    </mat-card>
+</div>
+<app-footer></app-footer>

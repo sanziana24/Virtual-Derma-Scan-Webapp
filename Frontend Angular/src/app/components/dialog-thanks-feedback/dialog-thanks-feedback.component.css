@@ -1,0 +1,64 @@
+.img-ok {
+    height: 50px;
+    width: 50px;
+    margin-top: 28px;
+}
+
+h1{
+    color: green;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-size: 34px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.button-15 {
+    background-image: linear-gradient(grey, grey);
+    border: 1px solid grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    direction: ltr;
+    display: block;
+    font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    line-height: 1.47059;
+    min-width: 30px;
+    overflow: visible;
+    padding: 4px 15px;
+    text-align: center;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    margin-right: 50%;
+    margin-left: 37%;
+
+}
+
+.button-15:disabled {
+    cursor: default;
+    opacity: .3;
+}
+
+.button-15:hover {
+    background-image: linear-gradient(grey, grey);
+    border-color: grey;
+    text-decoration: none;
+}
+
+.button-15:active {
+    background-image: linear-gradient(grey, grey);
+    border-color: #006DBC;
+    outline: none;
+}
+
+.button-15:focus {
+    box-shadow: grey 0 0 0 3px;
+    outline: none;
+}

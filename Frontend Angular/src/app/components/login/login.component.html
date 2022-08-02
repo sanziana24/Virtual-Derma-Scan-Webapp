@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div class="login-page">
+    <br><br>
+    <mat-card class="login-card">
+        <mat-card-header class="header">
+            <mat-card-title class="title">
+                Sign in
+            </mat-card-title>
+            <mat-card-subtitle class="subtitle">
+                Please fill in the form below
+            </mat-card-subtitle>
+            <div class="box">
+                <br>
+                <img mat-card-image
+                     src="/assets/images/login-icon.png">
+            </div>
+        </mat-card-header>
+        <hr>
+        <br>
+        <mat-card-content>
+            <form name="form" #myForm="ngForm" (ngSubmit)="myForm.form.valid">
+                <div class="form-group">
+                    <label for="username" class="input-label">Username*</label>
+                    <input type="text"
+                           [(ngModel)]="username"
+                           class="form-control"
+                           id="username"
+                           name="username"
+                           placeholder="Username"
+                           #usernameField="ngModel" required>
+                </div>
+                <div *ngIf="!usernameField.untouched && !usernameField.valid  && usernameField.hasError('required')"
+                     class="help-block">
+                    Username is <strong> required</strong>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="input-label">Password*</label>
+                    <input type="password"
+                           [(ngModel)]="password"
+                           class="form-control"
+                           id="password"
+                           name="password"
+                           placeholder="Password"
+                           #passwordField="ngModel" required>
+                </div>
+                <div *ngIf="!passwordField.untouched && !passwordField.valid  && passwordField.hasError('required')"
+                     class="help-block">
+                    Password is <strong> required</strong>
+                </div>
+
+                <br>
+                <p><strong>*</strong>Required fields</p>
+
+                <div class="form-group">
+                    <div class="wrapper">
+                        <button class="button-1"
+                                role="button"
+                                [disabled]="!myForm.valid"
+                                (click)="onSubmit()">
+                            SIGN IN
+                        </button>
+                    </div>
+                </div>
+                <p class="not-account">Don't have an account? Sign up <a routerLink="/registerUser">here.</a></p>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+<app-footer></app-footer>

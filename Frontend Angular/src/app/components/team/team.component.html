@@ -1,0 +1,61 @@
+<app-header></app-header>
+<div class="team-page">
+    <mat-card class="card-1">
+        <br>
+        <mat-card-title>
+            The Team
+        </mat-card-title>
+    </mat-card>
+    <br><br>
+    <h2>Site Administrator Creator</h2>
+    <br>
+
+    <mat-card class="card-2">
+        <div class="text-center">
+            <div class="row mt-md-3">
+                <div class="col-6">
+                    <img src="/assets/images/admin-photo-cropped.png" alt="admin-photo" class="admin-image">
+                </div>
+                <div class="col-6">
+                    <br>
+                    <div class="row">
+                        <span class="admin-name">Sînziana-Gabriela Olteanu</span>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <span class="admin-description">Computer Science Student, part-time Automation Tester, Web Developer passionate and AI hobbyiest.</span>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <span class="admin-quote">"Vision is tomorrow's reality expressed as an idea today"</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </mat-card>
+    <br><br><br>
+    <hr>
+    <br><br>
+    <h2>Meet Our Expert Dermatology Team</h2>
+    <br><br><br>
+
+    <div class="container">
+        <div class="row text-center">
+            <div *ngFor="let d of doctors" class="col-lg-4 col-sm-6">
+
+                <mat-card class="box">
+                        <div class="box-icon">
+                            <img class="img-class" [src]="d.stringPicture">
+                        </div>
+                        <p class="card-firstName">{{d.firstName}} {{d.lastName}}</p>
+                        <p class="card-age">{{d.age}} years old</p>
+                        <p class="card-activityTime">{{d.activityTime}} years old experience</p>
+                        <p class="card-aboutDoctor">{{d.aboutDoctor}}</p>
+                </mat-card>
+
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

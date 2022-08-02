@@ -1,0 +1,227 @@
+h5 {
+  color: white;
+  font-size: 25px;
+  line-height: 26pt;
+}
+
+a {
+  text-decoration: none;
+  /* nu subliniaza link-ul */
+  color: inherit;
+  /* lasa culoarea textului specificata in alte elemente, nu o schimba */
+}
+
+a:hover {
+  text-decoration: none;
+  /* nu subliniaza link-ul */
+  color: inherit;
+  /* lasa culoarea textului specificata in alte elemente, nu o schimba */
+}
+
+.last-slide {
+  color: black;
+  font-size: 25px;
+  line-height: 26pt;
+}
+
+.box {
+  padding: 50px 30px;
+  text-align: center;
+  box-shadow: 0 0 0 0 #fff;
+  transition: .10s;
+  border-radius: 5px;
+  transform: translateY(0);
+  margin-bottom: 25px;
+}
+
+.box .box-icon {
+  height: 160px;
+  margin-bottom: 20px;
+}
+
+.box:hover {
+  background-color: lightpink;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: box-shadow .10s;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.box h4 {
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  font-weight: 600;
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+p {
+  margin: 0 0 10px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.container {
+  width: 850px;
+}
+
+.img-class {
+  width: 100px;
+  height: 120px;
+}
+
+h2 {
+  font-family: 'Kalam', cursive;
+  color: black;
+  font-size: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Great Vibes', cursive;
+  color: lightpink;
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.upload-img {
+  width: 52px;
+  margin-top: -40px;
+}
+
+.span-upload {
+  font-family: 'Kalam';
+  font-size: 40px;
+  color: lightpink;
+}
+
+.div-virtual-derma-scan-steps {
+  margin-left: 500px;
+}
+
+.button-73 {
+  appearance: none;
+  background-color: white;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: lightpink 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-73:hover {
+  background-color: #e06377;
+  /*box-shadow: #FF6314 0 -6px 8px inset;*/
+  transform: scale(1.125);
+}
+
+.button-73:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .button-73 {
+    font-size: 1.5rem;
+    padding: .75rem 2rem;
+  }
+}
+
+.vertical-center {
+  margin-left: 300px;
+}
+
+.block-how-it-works__steps-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  position: relative;
+  padding: 48px 32px;
+}
+
+.block-how-it-works__content-container {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.block-how-it-works__illustration-cell {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.block-how-it-works__illustration {
+  margin-bottom: 20px;
+  max-width: 75%;
+}
+
+.block-how-it-works__steps {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  max-width: 250px;
+  min-height: 80px;
+}
+
+.block-skin-disease {
+  background-color: #f5f5f5;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.title-disease {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bolder;
+  font-size: 32px;
+  text-align: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  display: table;
+  line-height: 40px;
+}
+
+.disease-name{
+  text-align: center;
+  color:white;
+  font-weight: bolder;
+  font-size:20px;
+}
+
+
+

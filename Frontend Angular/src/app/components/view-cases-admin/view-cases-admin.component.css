@@ -1,0 +1,58 @@
+.view-cases-admin-page{
+    background-color: #f9f6f2;
+}
+
+.table-general-style{
+    margin-left: 150px;
+    margin-right: 150px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+.mat-form-field {
+    font-size: 18px;
+    width: 30%;
+}
+
+.mat-row:nth-child(even){
+    background-color: white;
+}
+
+.mat-row:nth-child(odd){
+    background-color: #ffe9ec;
+}
+
+.mat-cell {
+    justify-content: center;
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+.mat-header-cell{
+    justify-content: center;
+    font-weight: bolder;
+    border-bottom-style: solid;
+    font-size: 16px;
+    color:gray;
+}
+
+.img-class{
+    height: 100px;
+    width: 100px;
+    margin: 25px;
+}
+
+.img-class:hover{
+    height: 150px;
+    width: 150px;
+    transform: scale(1.2);
+    transition: transform 0.2s;
+}
+
+.mat-paginator{
+    font-size: 18px;
+}
+
+.not-answered{
+    color: red;
+}

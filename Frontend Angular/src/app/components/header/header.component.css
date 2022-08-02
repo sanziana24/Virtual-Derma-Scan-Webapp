@@ -1,0 +1,81 @@
+navbar {
+  background-color: #e06377;/* #f9d5e5; */
+  color: black;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+}
+
+ .dropdown:hover .dropdown-menu {
+   display: block;
+    /*display: block;  se afiseaza lista dropdown la hover*/
+   right: 0px;
+   position: absolute;
+   padding: 0px; /* full hover */
+   text-align: center;
+}
+
+.text-nav {
+  color: black;
+  font-size: 25px;
+  font-weight: bolder;
+  margin-right:20px;
+}
+
+.dropdown-item {
+  color: black;
+  font-weight: bold;
+}
+
+.dropdown-item:hover {
+  background-color: lightpink;
+  color: black;
+  font-weight: bold;
+}
+
+.nav-link {
+  margin-right: 20px;
+}
+
+.nav-item {
+  color: black;
+}
+
+.nav-div {
+  margin-left: auto;
+  margin-right:0;
+  margin-top:30px;
+}
+
+a {
+  text-decoration: none;
+  /* nu subliniaza link-ul */
+  color: black;
+  /* lasa culoarea textului specificata in alte elemente, nu o schimba */
+}
+
+a:hover {
+  text-decoration: none;
+  /* nu subliniaza link-ul */
+  color: lightpink ;
+  /* color: inherit lasa culoarea textului specificata in alte elemente, nu o schimba */
+}
+
+h2 {
+  font-family: 'Kalam', cursive;
+  color: lightpink;
+  font-size: 55px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top:40px;
+}
+
+ul {
+  margin-right:20px;
+}
+
+.account-img {
+  width:42px;
+  height:42px;
+  margin-top: -15px;
+}

@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="skin-guide-page">
+    <br><br><br>
+    <div class="search-disease">
+        <input class="form-control empty" type="text" [(ngModel)]="searchText" placeholder="&#xF002; Search disease"/>
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="card-disease text-center"
+             *ngFor="let d of skinDiseases  | filter:searchText | paginate: {itemsPerPage:itemsPerPage, currentPage:page, totalItems: totalLength}">
+            <div class="row">
+                <div class="col">
+                    <img class="card-image"
+                         src={{d.diseaseImage}}>
+                </div>
+                <div class="col pt-lg-5 mt-lg-2">
+                    <p class="p-info"><b>{{d.diseaseName}}</b></p>
+                    <br>
+                    <button class="button-48" role="button" (click)="onOpenReadMore(d)"><span class="text">Read more</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <pagination-controls (pageChange)="page = $event" class="my-pagination text-center"></pagination-controls>
+    <br>
+    <br>
+</div>
+<app-footer></app-footer>

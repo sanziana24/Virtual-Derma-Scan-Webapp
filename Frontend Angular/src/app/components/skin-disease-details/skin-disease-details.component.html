@@ -1,0 +1,32 @@
+<div>
+    <button class="close" mat-dialog-close>X</button>
+    <div mat-dialog-title>
+        {{data.diseaseName}}
+    </div>
+    <div mat-dialog-content>
+        <div class="row">
+            <div class="col">
+                <img class="img-disease" src={{data.diseaseImage}}>
+            </div>
+            <div class="col mt-4 mr-3">
+                <h3><b>&nbsp;&nbsp;&nbsp;&nbsp;{{data.description}}</b></h3>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col">
+                <app-dialog-section-item [name]="SYMPTOMS_CONSTANT"
+                                         [value]="data.symptoms">
+                </app-dialog-section-item>
+            </div>
+            <div class="col ml-3">
+                <app-dialog-section-item [name]="TREATMENT_CONSTANT"
+                                         [value]="data.treatments">
+                </app-dialog-section-item>
+            </div>
+        </div>
+        <br>
+    </div>
+    <h3 style="text-align: center"><b>Consult an <a routerLink="/getChecked">online
+        dermatologist </a>today and get an answer on your skin concern up to 48 hours!</b></h3>
+</div>

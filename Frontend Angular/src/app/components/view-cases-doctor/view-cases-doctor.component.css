@@ -1,0 +1,85 @@
+.view-cases-doctor-page{
+    background-color: #f9f6f2;
+}
+
+.table-general-style{
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+.mat-form-field {
+    font-size: 18px;
+    width: 30%;
+}
+
+.mat-row:nth-child(even){
+    background-color: white;
+}
+
+.mat-row:nth-child(odd){
+    background-color: #ffe9ec;
+}
+
+.mat-cell {
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bolder;
+}
+.mat-header-cell{
+    justify-content: center;
+    font-weight: bolder;
+    border-bottom-style: solid;
+    font-size: 16px;
+    color:gray;
+}
+
+.btn-submit {
+    font-family: 'Kalam', cursive;
+    background-color: #FC94AF;
+    color: white;
+    font-size: 20px;
+    height: 40px;
+    /*width: 180px;*/
+    display: block;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    margin-top:20px;
+    margin-bottom:20px;
+    cursor: pointer;
+}
+
+.img-class{
+    height: 100px;
+    width: 100px;
+    margin: 25px;
+}
+
+.img-class:hover{
+    height: 150px;
+    width: 150px;
+    transform: scale(1.2);
+    transition: transform 0.2s;
+}
+
+.mat-paginator{
+    font-size: 18px;
+}
+
+textarea{
+    height: 110px;
+    width:150px;
+}
+
+.already-evaluated{
+    font-weight: bold;
+    color: #c83349;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.not-answered{
+    color: red;
+}
+

@@ -1,0 +1,268 @@
+<app-header></app-header>
+<div class="register-page">
+    <br><br>
+    <mat-card class="registration-card">
+        <mat-card-header class="header">
+            <mat-card-title class="title">
+                Registration Form
+            </mat-card-title>
+            <mat-card-subtitle class="subtitle">
+                Please fill in the form below
+            </mat-card-subtitle>
+            <div class="box">
+                <br>
+                <img mat-card-image
+                     src="/assets/images/register-icon.png">
+            </div>
+        </mat-card-header>
+        <hr>
+        <br>
+        <mat-card-content>
+            <form name="form" #myForm="ngForm" (ngSubmit)="myForm.form.valid">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="firstName" class="input-label">First Name*</label>
+                            <input type="text"
+                                   [(ngModel)]="firstName"
+                                   class="form-control"
+                                   id="firstName"
+                                   name="firstName"
+                                   placeholder="First Name"
+                                   minlength="3"
+                                   maxlength="20"
+                                   pattern="^[a-zA-Z ]*"
+                                   #firstNameField="ngModel" required>
+                            <div *ngIf="firstNameField.hasError('minlength') && !firstNameField.hasError('required')"
+                                 class="help-block">
+                                First name must be <strong> at least 3 characters long</strong>
+                            </div>
+                            <div *ngIf="firstNameField.hasError('maxLength') && !firstNameField.hasError('required')"
+                                 class="help-block">
+                                First name must be <strong> at most 20 characters long</strong>
+                            </div>
+                            <div *ngIf="!firstNameField.valid && !firstNameField.hasError('required') && !firstNameField.hasError('minlength')"
+                                 class="help-block">
+                                First name should contain <strong> only letters</strong>
+                            </div>
+                            <div *ngIf="!firstNameField.untouched && !firstNameField.valid && firstNameField.hasError('required')"
+                                 class="help-block">
+                                First name is <strong> required</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="lastName" class="input-label">Last Name*</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="lastName"
+                                   name="lastName"
+                                   placeholder="Last Name"
+                                   minlength="3"
+                                   maxlength="20"
+                                   pattern="^[a-zA-Z ]*"
+                                   [(ngModel)]="lastName"
+                                   #lastNameField="ngModel" required>
+                            <div *ngIf="lastNameField.hasError('minlength') && !lastNameField.hasError('required')"
+                                 class="help-block">
+                                Last name must be <strong> at least 3 characters long</strong>
+                            </div>
+                            <div *ngIf="lastNameField.hasError('maxLength') && !lastNameField.hasError('required')"
+                                 class="help-block">
+                                Last name must be <strong> at most 20 characters long</strong>
+                            </div>
+                            <div *ngIf="!lastNameField.valid && !lastNameField.hasError('required') && !lastNameField.hasError('minlength')"
+                                 class="help-block">
+                                Last name should contain <strong> only letters</strong>
+                            </div>
+                            <div *ngIf="!lastNameField.untouched && !lastNameField.valid && lastNameField.hasError('required')"
+                                 class="help-block">
+                                Last name is <strong> required</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="age" class="input-label">Age*</label>
+                            <input type="age"
+                                   class="form-control"
+                                   id="age"
+                                   name="age"
+                                   placeholder="Age"
+                                   [(ngModel)]="age"
+                                   min="16"
+                                   max="100"
+                                   #ageField="ngModel" required>
+                        </div>
+                        <div *ngIf="!ageField.untouched && !ageField.valid" class="help-block">
+                            Age is <strong> required</strong>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="gendre" class="input-label">Gendre*</label>
+                            <select [(ngModel)]="gendre"
+                                    class="form-control"
+                                    id="gendre"
+                                    name="gendre"
+                                    placeholder="Gendre"
+                                    #gendreField="ngModel" required>
+                                <option value="undefined" disabled selected>Select Gendre</option>
+                                <option value="MALE">Male</option>
+                                <option value="FEMALE">Female</option>
+                            </select>
+                        </div>
+                        <div *ngIf="!gendreField.untouched && !gendreField.valid" class="help-block">
+                            Gendre is <strong> required</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="country" class="input-label">Country*</label>
+                        <select [(ngModel)]="country"
+                                class="form-control"
+                                id="country"
+                                name="country"
+                                placeholder="Country"
+                                #countryField="ngModel" required>
+                            <option value="undefined" disabled selected>Select Country</option>
+                            <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+                        </select>
+                    </div>
+                    <div *ngIf="!countryField.untouched && !countryField.valid" class="help-block">
+                        Country is <strong> required</strong>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="username" class="input-label">Username*</label>
+                        <input type="text"
+                               class="form-control"
+                               id="username"
+                               name="username"
+                               placeholder="Username"
+                               [(ngModel)]="username"
+                               minlength="8"
+                               maxlength="20"
+                               #usernameField="ngModel" required>
+                    </div>
+                    <div *ngIf="usernameField.hasError('minlength') && !usernameField.hasError('required')"
+                         class="help-block">
+                        Username must be <strong> at least 8 characters long</strong>
+                    </div>
+                    <div *ngIf="usernameField.hasError('maxLength') && !usernameField.hasError('required')"
+                         class="help-block">
+                        Username must be <strong> at most 20 characters long</strong>
+                    </div>
+                    <div *ngIf="!usernameField.untouched && !usernameField.valid  && usernameField.hasError('required')"
+                         class="help-block">
+                        Username is <strong> required</strong>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="email" class="input-label">Email*</label>
+                        <input type="text"
+                               class="form-control"
+                               id="email"
+                               name="email"
+                               placeholder="Email"
+                               [(ngModel)]="email"
+                               minlength="12"
+                               pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+                               #emailField="ngModel" required>
+                        <div *ngIf="!emailField.valid && !emailField.hasError('required')"
+                             class="help-block">
+                            Email address <strong> is not valid</strong>
+                        </div>
+                        <div *ngIf="!emailField.untouched && !emailField.valid  && emailField.hasError('required')"
+                             class="help-block">
+                            Email is <strong> required</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="password" class="input-label">Password*</label>
+                            <input type="password"
+                                   class="form-control"
+                                   id="password"
+                                   name="password"
+                                   placeholder="Password"
+                                   [(ngModel)]="password"
+                                   minlength="8"
+                                   pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                                   #passwordField="ngModel" required>
+                            <div *ngIf="passwordField.hasError('pattern') && !passwordField.hasError('required')"
+                                 class="help-block">
+                                Password must contain <strong>at least 8 characters, 1 uppercase, 1 lowercase, 1 digit
+                                and 1 special character!</strong>
+                            </div>
+                            <div *ngIf="!passwordField.untouched && !passwordField.valid  && passwordField.hasError('required')"
+                                 class="help-block">
+                                Password is <strong> required</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="confirmPassword" class="input-label">Confirm Password*</label>
+                            <input type="password"
+                                   class="form-control"
+                                   id="confirmPassword"
+                                   name="confirmPassword"
+                                   placeholder="Confirm Password"
+                                   [(ngModel)]="confirmPassword"
+                                   minlength="8"
+                                   pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                                   #confirmPasswordField="ngModel"
+                                   required>
+                        </div>
+                        <div *ngIf="confirmPasswordField.hasError('pattern') && !confirmPasswordField.hasError('required')"
+                             class="help-block">
+                            Password must contain <strong>at least 8 characters, 1 uppercase, 1 lowercase, 1 digit and 1
+                            special character!</strong>
+                        </div>
+                        <div *ngIf="!(confirmPasswordField.value==passwordField.value) && !confirmPasswordField.hasError('pattern') && !confirmPasswordField.hasError('required')"
+                             class="help-block">
+                            Password and Confirm Password <strong> do not match!</strong>
+                        </div>
+                        <div *ngIf="!confirmPasswordField.untouched && !confirmPasswordField.valid  && confirmPasswordField.hasError('required')"
+                             class="help-block">
+                            Confirm Password is <strong> required</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <p><strong>*</strong>Required fields</p>
+
+                <div class="form-group">
+                    <div class="wrapper">
+                        <button class="button-1"
+                                role="button"
+                                [disabled]="!myForm.valid"
+                                (click)="onSubmit()"
+                        >SUBMIT
+                        </button>
+                    </div>
+                </div>
+                <p class="already-account">Already have an account? Sign in <a routerLink="/login">here.</a></p>
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+</div>
+<app-footer></app-footer>

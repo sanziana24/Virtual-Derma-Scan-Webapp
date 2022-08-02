@@ -1,0 +1,28 @@
+.footer-copyright {
+  height: 18vh;
+  background-color: lightpink;
+  color: white;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.text1{
+  font-size: 20px;
+  color: #c83349;
+}
+.text3{
+  font-size: 20px;
+  margin-top: 20px;
+  color: #c83349;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  /* nu subliniaza link-ul */
+  color: black;
+  /* lasa culoarea textului specificata in alte elemente, nu o schimba */
+}

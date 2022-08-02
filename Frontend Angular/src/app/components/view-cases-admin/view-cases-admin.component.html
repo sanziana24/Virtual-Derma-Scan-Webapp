@@ -1,0 +1,66 @@
+<app-header></app-header>
+<div class="view-cases-admin-page">
+    <div class="table-general-style">
+        <div>
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Search">
+            </mat-form-field>
+        </div>
+        <br>
+
+        <mat-table class="mat-elevation-z8 table-responsive-md " [dataSource]="dataSource" matSort>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="idCase">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Case ID</mat-header-cell>
+                <mat-cell *matCellDef="let case"> {{case.idCase}} </mat-cell>
+            </ng-container>
+
+            <!-- Picture Column -->
+            <ng-container matColumnDef="picture">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Picture</mat-header-cell>
+                <mat-cell *matCellDef="let case">
+                    <img class="img-class" [src]="case.stringCasePicture">
+                </mat-cell>
+            </ng-container>
+
+            <!-- Description Column -->
+            <ng-container matColumnDef="description">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Description</mat-header-cell>
+                <mat-cell *matCellDef="let case"> {{case.description}} </mat-cell>
+            </ng-container>
+
+            <!-- Date Submit Column -->
+            <ng-container matColumnDef="dateSubmit">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Date Submit</mat-header-cell>
+                <mat-cell
+                        *matCellDef="let case"> {{case.dateSubmit | date: 'mediumDate'}} {{case.dateSubmit | date: 'shortTime'}}</mat-cell>
+            </ng-container>
+
+            <!-- Status Column -->
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Status</mat-header-cell>
+                <mat-cell *matCellDef="let case">
+                    <span *ngIf="case.answear">{{case.status}}</span>
+                    <span *ngIf="!case.answear" class="not-answered">{{case.status}}
+                        <span *ngIf="case.timeElapsed > 48" style="font-size:30px;"> ! </span>
+                    </span>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="username">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Assigned Doctor</mat-header-cell>
+                <mat-cell *matCellDef="let case">
+                    {{case.username}}
+                </mat-cell>
+            </ng-container>
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row matRipple *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+</div>
+<app-footer></app-footer>
