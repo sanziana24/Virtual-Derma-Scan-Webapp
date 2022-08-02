@@ -1,6 +1,8 @@
 # Virtual-Derma-Scan-Webapp
 Bachelor Thesis Webapp Application for the diagnosis of dermatological diseases
 
+Check video: https://drive.google.com/drive/folders/1l-NmsWCxBL7mdYDvK0wrj6QjlJylWFH-?usp=sharing
+
 The software system is designed on a 3-Tier architecture, as can be seen in the system diagram:
 
 1. Presentation Tier: represented by Angular application, through which the user interacts with the sistem;
